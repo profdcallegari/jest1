@@ -46,3 +46,20 @@ test('[AsyncAwait] Deve carregar o primeiro usuario de teste -> Leanne Graham', 
     const dados = await functions.buscarUsuario1(); 
     expect(dados.name).toEqual('Leanne Graham');
 });
+
+
+// Inverter strings
+// DANIEL -> LEINAD
+// ANA -> ANA
+// Jest -> tseJ
+const casosInverterStrings = [['DANIEL', 'LEINAD'], ['ANA', 'ANA'], ['Jest', 'tseJ']];
+
+describe('', () => {
+    test.each(casosInverterStrings)(
+        'inversao de %p -> %p',
+        (original, inversaoEsperada) => {
+            const resultado = functions.inverterString(original);
+            expect(resultado).toEqual(inversaoEsperada);
+        }
+    )
+});
